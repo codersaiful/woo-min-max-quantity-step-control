@@ -139,7 +139,7 @@ if( ! class_exists( 'Plugin_Required' ) ){
                     'coupon_code' => self::$coupon_code,
                     'target_url' => 'https://wooproducttable.com/?discount=BLACKFRIDAY2024&campaign=BLACKFRIDAY2024&ref=1&utm_source=Default_Offer_LINK',
                     'img_url' => 'https://ps.w.org/woo-product-table/assets/icon-256x256.png',
-                    'message' => 'Helps you to display your products in a searchable table layout with filters.', 
+                    'message' => 'Table for Variable Product, Table on Taxonomy/Category/Tag page, Custom Query, Query on any type taxonomy.', 
                     'button_text' => 'Get with Exclusive Features',
                     'coupon_show_bool' => true,
                 ],
