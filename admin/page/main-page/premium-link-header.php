@@ -1,5 +1,5 @@
 <?php
-$coupon_Code = 'CHRISTMAS2023';
+$coupon_Code = 'BLACKFRIDAY2024';
 
 ?>
 <div class="wrap wcmmq_wrap wcmmq-content">
@@ -15,7 +15,7 @@ $coupon_Code = 'CHRISTMAS2023';
 					</a>
 				</div>
 				<div class="col-lg-4">
-					<h2>Incredible</h2>
+					<h2>BLACK FRIDAY</h2>
 					<p>Checkout our Offer.</p>
 				</div>
 				<div class="col-lg-6">
