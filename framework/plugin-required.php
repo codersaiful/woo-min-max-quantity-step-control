@@ -12,13 +12,20 @@ if( ! class_exists( 'Plugin_Required' ) ){
     {
         public static $coupon_code = 'BLACKFRIDAY2024';
         public static $last_date = '31 Dec 2024';
-        public static $PRO_DEV_VERSION;
+        public static $PRO_DEV_VERSION ;
+
+        public static $css_file_url;
+        public static $css_version = '1.0.0';
 
         public static $stop_next = 0;
-        public function __construct()
+
+        public static function initialize()
         {
+
             self::$PRO_DEV_VERSION = defined( 'WC_MMQ_PRO_VERSION' );
+            self::$css_file_url = trailingslashit( WC_MMQ_BASE_URL ) . 'assets/css/notice.css';
         }
+
         public static function fail()
         {
 
@@ -58,6 +65,9 @@ if( ! class_exists( 'Plugin_Required' ) ){
 
             $return_true = apply_filters( 'wcmmq_offer_show_all', true );
             if( !$return_true ) return;
+
+            self::initialize();
+
 
             $last_date = self::$last_date; //Last date string to show offer
             $last_date_timestamp = strtotime( $last_date );
@@ -120,7 +130,7 @@ if( ! class_exists( 'Plugin_Required' ) ){
         }
         protected static function OtherOffer( $probability = 5, $extra_for_id = '' )
         {
-
+            
             if( $probability !== 5 ) return;
             $fullArgs = [
                 [
@@ -236,7 +246,7 @@ if( ! class_exists( 'Plugin_Required' ) ){
 
             ];
 
-
+            //Now I would like to filter $fullArgs array with active plugins actually
             $active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins', array() ) );
             //Now I would like to filter $fullArgs array with active plugins actually if found $fullArgs['plugin_id'] then remove it from $fullArgs array.
             $fullArgs = array_filter($fullArgs, function($item) use ($active_plugins) {
@@ -250,7 +260,7 @@ if( ! class_exists( 'Plugin_Required' ) ){
 
             //Finally rearrange with new index 0,1,2,3,4,5,6,7,8,9 and so on | Specially for reindexing
             $fullArgs = array_values($fullArgs);
-
+            update_option('multisite_checking_saiful_saiful',['wcmmq' =>rand(1,900000), self::$PRO_DEV_VERSION, self::$css_file_url, self::$PRO_DEV_VERSION]);
             //sob check korar por jodi empty hoy, taile null return kore dibo
             if(empty($fullArgs)) return;
 
@@ -261,6 +271,7 @@ if( ! class_exists( 'Plugin_Required' ) ){
             self::GetCustomOffer( $rand_args, $arr_index, $extra_for_id );
 
             
+            add_action( 'admin_enqueue_scripts', [self::class, 'admin_enqueue'] );
         }
 
         protected static function GetCustomOffer( $args = ['title' => '', 'coupon_code' => '', 'target_url' => '', 'img_url' => '', 'message' => '', 'button_text' => '', 'coupon_show_bool' => true  ], $arr_index = false, $extra_for_id = '' )
@@ -352,6 +363,12 @@ if( ! class_exists( 'Plugin_Required' ) ){
             ]);
 
             if($temp_numb == 5) $offerNc->show();
+        }
+
+        public static function admin_enqueue()
+        {
+            wp_register_style( 'wcmmq-notice', self::$css_file_url, false, self::$css_version, 'all' );
+            wp_enqueue_style( 'wcmmq-notice' );
         }
     }
 }

@@ -35,8 +35,7 @@ use PSSG_Sync_Sheet\App\Handle\Quick_Table;
             <div class="wcmmq-qes-wrapper">
                 <div class="free-plugin-install-info-wrapper">
                     <div style="float: left;">
-                        <h3>Need a plugin [Product Stock Sync with Google Sheet for WooCommerce]</h3>
-                        <p><b>Free Download</b>, Install and Activate to get following table.</p>
+
                         <p class="premium-version-wrapper">
                             
                             <?php do_action( 'wcmmq_quick_edit_table_free_version' ); ?>

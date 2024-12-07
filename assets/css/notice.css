@@ -1,5 +1,5 @@
 
-@keyframes wpt-gradient-animation {
+@keyframes wcmmq-gradient-animation {
     0% {
         background-position: 0% 50%;
     }
@@ -12,7 +12,7 @@
 }
 
 li#toplevel_page_wcmmq-min-max-control .wp-menu-name {
-    font-size: 97%;
+    /* font-size: 97%; */
     background: linear-gradient(90deg, #515c4a4d, #2271b133, #4caf5033);
     
     /* background: linear-gradient(90deg, #b2ff7e4d, #ff758c0f, #e208ff99); */
@@ -22,13 +22,13 @@ li#toplevel_page_wcmmq-min-max-control .wp-menu-name {
     -webkit-text-fill-color: transparent; */
      /* -webkit-background-clip: text; Clips the background to the text */
      /* -webkit-text-fill-color: transparent; Makes the text itself transparent */
-    animation: wpt-gradient-animation 10s ease infinite; /* Applies the animation */
+    animation: wcmmq-gradient-animation 10s ease infinite; /* Applies the animation */
 }
 
 li#toplevel_page_wcmmq-min-max-control.wp-has-current-submenu .wp-menu-name {
     background: linear-gradient(90deg, #b2ff7e4d, #ff758c0f, #ffffff5c);
     background-size: 200% 200%; /* Ensure the gradient can animate smoothly */
-    animation: wpt-gradient-animation 10s ease infinite; /* Applies the animation */
+    animation: wcmmq-gradient-animation 10s ease infinite; /* Applies the animation */
 }
 
 
@@ -143,7 +143,7 @@ li#toplevel_page_wcmmq-min-max-control.wp-has-current-submenu .wp-menu-name {
 
 
 
-.wpt-plugin-recommend-area .anywhere-notice.ca-notice.notice-success[data-notice_id="black-friday-22"] {
+.wcmmq-plugin-recommend-area .anywhere-notice.ca-notice.notice-success[data-notice_id="black-friday-22"] {
     background: black;
     text-align: center;
     display: flex;
