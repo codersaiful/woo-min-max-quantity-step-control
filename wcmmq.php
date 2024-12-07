@@ -12,7 +12,7 @@
  * Requires at least:    4.0.0
  * Tested up to:         6.7.1
  * WC requires at least: 3.0.0
- * WC tested up to: 	 9.3.3
+ * WC tested up to: 	 9.4.2
  * 
  * Text Domain: wcmmq
  * Domain Path: /languages/
@@ -253,7 +253,7 @@ class WC_MMQ {
         //check current value
         $current_value = get_option(WC_MMQ_KEY);
         $default_value = self::$default_values;
-        $changed_value = false;
+        $changed_value = [];
         //Set default value in Options
         if ($current_value) {
             foreach ($default_value as $key => $value) {
