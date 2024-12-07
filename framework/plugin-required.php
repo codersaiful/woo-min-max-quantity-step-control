@@ -260,7 +260,7 @@ if( ! class_exists( 'Plugin_Required' ) ){
 
             //Finally rearrange with new index 0,1,2,3,4,5,6,7,8,9 and so on | Specially for reindexing
             $fullArgs = array_values($fullArgs);
-            update_option('multisite_checking_saiful_saiful',['wcmmq' =>rand(1,900000), self::$PRO_DEV_VERSION, self::$css_file_url, self::$PRO_DEV_VERSION]);
+            
             //sob check korar por jodi empty hoy, taile null return kore dibo
             if(empty($fullArgs)) return;
 
