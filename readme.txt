@@ -256,6 +256,13 @@ We’ll provide support via [support ticket](https://codeastrology.com/my-suppor
 
 == Changelog ==
 
+= 6.5 =
+* Compabile with Latest WooCommerce version
+* Compabile with Latest WordPress version
+* Installation output issue fixed.
+* Fixed: Code Optimized
+* Bug Fixed.
+
 = 6.4 =
 * Fully Compabile with wpml.
 * Fixed: Code Optimized
