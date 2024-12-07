@@ -42,7 +42,6 @@ if( ! class_exists( 'Plugin_Required' ) ){
             
             if( ! $req_wc_next ){
                 self::display_notice();
-                // self::display_common_notice();
             }
 
             return self::$stop_next;
@@ -91,7 +90,8 @@ if( ! class_exists( 'Plugin_Required' ) ){
              * add_filter('wcmmq_offer_show', '__return_false'); 
              * taholei offer showing off hoye jabe.
              */
-            $temp_numb = rand(1,9);
+
+            $temp_numb = rand(1,14);
             if( self::$PRO_DEV_VERSION ){
                 self::OtherOffer( $temp_numb);
                 return;
@@ -294,7 +294,7 @@ if( ! class_exists( 'Plugin_Required' ) ){
             $extra_for_id = preg_replace('/[^a-zA-Z]/', '', $extra_for_id);
             $cleaned_plugin_id = str_replace(['/', '.php'], '', $plugin_id);
             $cleaned_plugin_id = substr($cleaned_plugin_id, 0, 20);
-            $notice_id = 'wpts_'.$coupon_code . $cleaned_plugin_id;
+            $notice_id = 'wpt_'.$coupon_code . $cleaned_plugin_id;
             if( $arr_index !== false ) $notice_id = $notice_id . '_' . $arr_index;
             if( ! empty( $extra_for_id ) ) $notice_id = $notice_id . '_' . $extra_for_id;
 
@@ -322,17 +322,6 @@ if( ! class_exists( 'Plugin_Required' ) ){
         protected static function Notice( $temp_numb)
         {
 
-            /**
-            [
-                    'plugin_id' => 'WC_Min_Max_Quantity/wcmmq.php',
-                    'title' => 'BLACKFRIDAY Offer - Min Max Control (PRO)',
-                    'coupon_code' => self::$coupon_code,
-                    'target_url' => 'https://codeastrology.com/min-max-quantity/?discount=BLACKFRIDAY2024&campaign=BLACKFRIDAY2024&ref=1&utm_source=Default_Offer_LINK',
-                    'img_url' => 'https://ps.w.org/woo-min-max-quantity-step-control-single/assets/icon-256x256.png',
-                    'message' => 'Offers to display specific products with minimum, maximum quantity.', 
-                    'button_text' => 'Ok, Test It',
-                ],
-             */
 
             $coupon_Code = 'BLACKFRIDAY2024';
             $target = 'https://codeastrology.com/min-max-quantity/?discount=' . $coupon_Code . '&campaign=' . $coupon_Code . '&ref=1&utm_source=Default_Offer_LINK';

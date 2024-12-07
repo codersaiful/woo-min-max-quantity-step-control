@@ -374,18 +374,6 @@ class WC_MMQ {
         return $data['Name'];
     }
 
-    /**
-     * For checking anything
-     * Only for test, Nothing for anything else
-     * 
-     * @since 1.0
-     * @param void $something
-     */
-    public static function vd($something) {
-        echo '<div style="width:400px; margin: 30px 0 0 181px;">';
-        var_dump($something);
-        echo '</div>';
-    }
 
     public function admin_notice_missing_main_plugin(){
         if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
