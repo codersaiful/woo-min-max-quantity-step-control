@@ -179,8 +179,8 @@ function wcmmq_last_step_checker( $modulous, $product_id, $variation_id, $quanti
  * For replace
  *
  * @param type $string
- * @param type $key_arr
- * @param type $val_arr
+ * @param array $key_arr
+ * @param array $val_arr
  * @return type
  */
 function wcmmq_replaced_msg( $text, $key_arr = array(), $val_arr = array() ){
