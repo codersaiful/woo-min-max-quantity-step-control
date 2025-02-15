@@ -259,6 +259,7 @@ We’ll provide support via [support ticket](https://codeastrology.com/my-suppor
 
 = 6.6 =
 * Fixed: Pro demo link fixed. 
+* Fixed: `TypeError: method_exists()` - error has been fixed. 
 * Bug fixed
 
 = 6.5 =

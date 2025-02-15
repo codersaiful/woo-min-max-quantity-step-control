@@ -945,6 +945,8 @@ style="display:none !important;"></div>
         if(!$validation_check) return $bool;
 
         $this->product = wc_get_product( $product_id );
+        //Suggested solutin by @galbaras @link https://wordpress.org/support/topic/typeerror-method_exists-argument-1-object_or_class-in-min-max-controller/?view=all#post-18307494
+        if ( ! is_object( $this->product ) ) return false;
         if( method_exists( $this->product, 'is_sold_individually' ) && $this->product->is_sold_individually() ) return $bool;
 
         $this->OrganizeValidPropertyAndOrganize( $product_id, $variation_id, $quantity);       
